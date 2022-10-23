@@ -1,8 +1,6 @@
 BOARD_WIDTH = 50
 BOARD_LENGTH = 25
-BOARD = ["empty", "empty",
-
-]
+BOARD = []
 SOLDIER_HEIGHT = 4
 SOLDIER_WIDTH = 2
 FLAG_HEIGHT =  3
@@ -11,3 +9,5 @@ MINE_HEIGHT = 1
 MINE_WIDTH = 3
 LOSE_MESSAGE = "You Lost!"
 WIN_MESSAGE = "You Won"
+GREEN = (0, 130, 0)
+BLACK = (0, 0 , 0)
