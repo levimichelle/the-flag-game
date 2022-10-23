@@ -1,6 +1,10 @@
+import Screen
+
 BOARD_WIDTH = 50
 BOARD_LENGTH = 25
-BOARD = []
+BOARD = [
+    Screen.create_board(BOARD_LENGTH, BOARD_WIDTH)
+]
 SOLDIER_HEIGHT = 4
 SOLDIER_WIDTH = 2
 FLAG_HEIGHT =  3
@@ -11,4 +15,4 @@ LOSE_MESSAGE = "You Lost!"
 WIN_MESSAGE = "You Won"
 GREEN = (0, 130, 0)
 BLACK = (0, 0 , 0)
-
+NUM_OF_MINES = 20
