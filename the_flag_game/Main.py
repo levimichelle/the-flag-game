@@ -7,7 +7,6 @@ import soldier
 state = {
     "is window open" : True,
     "is soldier moving" : True,
-    ""
 }
 def main():
     while "is window open":
