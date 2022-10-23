@@ -1,8 +1,9 @@
 import pygame
 import consts
+import random
 
 def create_screen():
-    screen = pygame.display.set_mode((1000, 500))
+    screen = pygame.display.set_mode((consts.range_of_x, consts.range_of_y))
     pygame.display.set_caption('the flag')
     screen.fill(consts.GREEN)
     pygame.display.flip()
@@ -20,18 +21,23 @@ def run_screen():
                 running = False
 
 
-import random
+
+
 def create_board(board_length, board_width):
     board = []
     for row in range(board_length):
+        new_row = []
         for col in range(board_width):
-            board.append("free")
+            new_row.append("grass")
+        board.append(new_row)
     return board
 
-def random_location_for_mines(board_width, board_length):
-    random_row = random.randint(board_width)
-    ranodm_col = random.randint(board_length)
-    return (random_row, ranodm_col)
 
-def spread_mines(num_of_mines, location):
-    for mine in range(num_of_mines):
+def spread_bushes():
+    count = 0
+    while count < consts.NUM_OF_BUSHES:
+        row = random.randint(consts.BOARD_WIDTH)
+        col = random.randint(consts.BOARD_LENGTH)
+        if consts.BOARD[row][col] == "grass":
+            consts.BOARD[row][col] = "bush"
+            count += 1
