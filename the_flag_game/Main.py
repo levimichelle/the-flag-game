@@ -14,7 +14,8 @@ def main():
     pygame.init()
     screen = Screen.create_screen()
     Screen.spread_bushes(screen)
-    # while state["is window open"]:
+    while state["is window open"]:
+        handle_user_events()
 
 
 # board = []
@@ -29,6 +30,14 @@ def main():
 #         print(col, end=" ")
 #     print()
 # print(board)
+def handle_user_events():
+    for event in pygame.event.get():
+
+        if event.type == pygame.QUIT:
+            state["is window open"]= False
+
+
+
 
 if __name__ == '__main__':
     main()
