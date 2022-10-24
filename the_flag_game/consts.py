@@ -1,8 +1,9 @@
 import Screen
+import MineField
 
 BOARD_WIDTH = 50
 BOARD_LENGTH = 25
-BOARD = Screen.create_board(BOARD_LENGTH, BOARD_WIDTH)
+BOARD = [MineField.create_board(BOARD_LENGTH, BOARD_WIDTH)]
 SOLDIER_HEIGHT = 4
 SOLDIER_WIDTH = 2
 FLAG_HEIGHT = 3
