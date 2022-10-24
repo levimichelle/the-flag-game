@@ -1,6 +1,7 @@
 import pygame
 import consts
 import random
+import Screen
 
 
 def create_screen():
@@ -9,26 +10,18 @@ def create_screen():
     screen.fill(consts.GREEN)
     pygame.display.flip()
 
-    return screen
 
-def run_screen():
-   running = True
-
-    while running:
-
-        for event in pygame.event.get():
-
-            if event.type == pygame.QUIT:
-                running = False
 
 def spread_bushes(screen):
     count = 0
     while count < consts.NUM_OF_BUSHES:
-        row = random.randint(consts.BOARD_WIDTH)
-        col = random.randint(consts.BOARD_LENGTH)
+        row = random.randint(0, consts.BOARD_WIDTH)
+        col = random.randint(0, consts.BOARD_LENGTH)
         if consts.BOARD[row][col] == "grass":
             consts.BOARD[row][col] = "bush"
             img = pygame.image.load(consts.BUSH_IMG)
-            screen.blit(img(row*consts.const_multiplication, col*consts.const_multiplication))
+            bushImg = pygame.transform.scale(img, (consts.BUSH_WIDTH, col * consts.BUSH_HEIGHT))
+            Screen.create_screen.blit(bushImg, (row * consts.const_multiplication, col * consts.const_multiplication))
             count += 1
+
 

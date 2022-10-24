@@ -1,3 +1,6 @@
+import pygame
+
+import Screen
 import consts
 import random
 
@@ -11,6 +14,11 @@ def create_board(board_length, board_width):
         board.append(new_row)
     return board
 
+
+def place_flag(screen):
+    Img = pygame.image.load(consts.FLAG_IMG)
+    flagImg = pygame.transform.scale(Img, (consts.FLAG_HEIGHT, consts.FLAG_WIDTH))
+    consts.SCREEN.blit(flagImg, consts.FLAG_POSITION)
 
 # board_matrix = consts.BOARD.copy()
 # board_matrix[21][46] = "flag"

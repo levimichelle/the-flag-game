@@ -5,17 +5,21 @@ import Screen
 import soldier
 
 state = {
-    "is window open" : True,
-    "is soldier moving" : True,
+    "is window open": True,
+    "is soldier moving": True,
     }
 
 
 def main():
     pygame.init()
-    screen = Screen.create_screen()
-    Screen.spread_bushes(screen)
+    consts.SCREEN
+
     while state["is window open"]:
         handle_user_events()
+            # Screen.spread_bushes(screen)
+        soldier.place_soldier()
+        pygame.display.update()
+        MineField.place_flag()
 
 
 # board = []
@@ -30,11 +34,17 @@ def main():
 #         print(col, end=" ")
 #     print()
 # print(board)
-def handle_user_events():
-    for event in pygame.event.get():
 
-        if event.type == pygame.QUIT:
-            state["is window open"]= False
+def handle_user_events():
+    while state["is window open"]:
+        clock = pygame.time.Clock()
+        clock.tick(consts.FPS)
+        for event in pygame.event.get():
+
+            if event.type == pygame.QUIT:
+                state["is window open"] = False
+
+    pygame.display.update()
 
 
 
