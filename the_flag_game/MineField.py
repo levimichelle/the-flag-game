@@ -1,5 +1,4 @@
 import pygame
-
 import Screen
 import consts
 import random
@@ -17,7 +16,7 @@ def create_board(board_length, board_width):
 
 def place_flag(screen):
     Img = pygame.image.load('flag.png')
-    flagImg = pygame.transform.scale(Img, ( consts.FLAG_WIDTH*consts.const_multiplication, consts.FLAG_HEIGHT*consts.const_multiplication))
+    flagImg = pygame.transform.scale(Img, (consts.FLAG_WIDTH*consts.const_multiplication, consts.FLAG_HEIGHT*consts.const_multiplication))
     screen.blit(flagImg, consts.FLAG_POSITION)
     pygame.display.update()
 
