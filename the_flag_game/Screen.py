@@ -40,4 +40,5 @@ def spread_bushes():
         col = random.randint(consts.BOARD_LENGTH)
         if consts.BOARD[row][col] == "grass":
             consts.BOARD[row][col] = "bush"
+            
             count += 1
