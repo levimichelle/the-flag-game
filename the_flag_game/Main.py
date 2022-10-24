@@ -12,14 +12,14 @@ state = {
 
 def main():
     pygame.init()
-    consts.SCREEN
+    Screen.create_screen()
 
     while state["is window open"]:
         handle_user_events()
             # Screen.spread_bushes(screen)
-        soldier.place_soldier()
-        pygame.display.update()
-        MineField.place_flag()
+        # soldier.place_soldier()
+        # pygame.display.update()
+        # MineField.place_flag()
 
 
 # board = []

@@ -16,9 +16,10 @@ def create_board(board_length, board_width):
 
 
 def place_flag(screen):
-    Img = pygame.image.load(consts.FLAG_IMG)
-    flagImg = pygame.transform.scale(Img, (consts.FLAG_HEIGHT, consts.FLAG_WIDTH))
-    consts.SCREEN.blit(flagImg, consts.FLAG_POSITION)
+    Img = pygame.image.load('flag.png')
+    flagImg = pygame.transform.scale(Img, ( consts.FLAG_WIDTH*consts.const_multiplication, consts.FLAG_HEIGHT*consts.const_multiplication))
+    screen.blit(flagImg, consts.FLAG_POSITION)
+    pygame.display.update()
 
 # board_matrix = consts.BOARD.copy()
 # board_matrix[21][46] = "flag"
